@@ -20,7 +20,7 @@ public class DetailActivity extends AppCompatActivity {
     TextView mName;
     TextView ingredients;
     TextView description;
-    TextView knownAs;
+    TextView alsoKnownAs;
     TextView placeOrigin;
 
 
@@ -34,7 +34,7 @@ public class DetailActivity extends AppCompatActivity {
         mName = (TextView) findViewById(R.id.MainName_tv);
         ingredients = (TextView) findViewById(R.id.ingredients_tv);
         description = (TextView)findViewById(R.id.description_tv);
-        knownAs = (TextView) findViewById(R.id.also_known_tv);
+        alsoKnownAs = (TextView) findViewById(R.id.also_known_tv);
         placeOrigin = (TextView) findViewById(R.id.origin_tv);
 
 
@@ -66,7 +66,19 @@ public class DetailActivity extends AppCompatActivity {
                 .into(ingredientsIv);
 
         setTitle(sandwich.getMainName());
+        if(alsoKnownAs==null){
+            alsoKnownAs.setText("No data available");
+        }else {
+            alsoKnownAs.setText(sandwich.getAlsoKnownAs().toString());
+        }
+        mName.setText(sandwich.getMainName());
+        ingredients.setText(sandwich.getIngredients().toString());
+        description.setText(sandwich.getDescription());
+        placeOrigin.setText(sandwich.getPlaceOfOrigin());
+
+
     }
+
 
     private void closeOnError() {
         finish();

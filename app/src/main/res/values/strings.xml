@@ -83,7 +83,7 @@
             bread\",\"Roast pork\",\"Ham\",\"Mustard\",\"Swiss cheese\",\"Dill pickles\"]}
         </item>
         <item>
-            {\"name\":{\"mainName\":\"Pljeskavica\",\"alsoKnownAs\":[]},\"placeOfOrigin\":\"Serbia\",\"description\":\"Pljeskavica,
+            {\"name\":{\"mainName\":\"Pljeskavica\",\"alsoKnownAs\":[ ]},\"placeOfOrigin\":\"Serbia\",\"description\":\"Pljeskavica,
             a grilled dish of spiced meat patty mixture of pork, beef and lamb, is a national dish
             of Serbia, also popular in Bosnia and Herzegovina and Croatia. It is a main course
             served with onions, kajmak (milk cream), ajvar (relish), and urnebes (spicy cheese
