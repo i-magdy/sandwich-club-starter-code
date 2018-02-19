@@ -16,19 +16,28 @@ public class DetailActivity extends AppCompatActivity {
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
 
+    ImageView ingredientsIv;
     TextView mName;
+    TextView ingredients;
+    TextView description;
     TextView knownAs;
     TextView placeOrigin;
-    TextView description;
-    ImageView imageView;
-    TextView ingredients;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        ImageView ingredientsIv = findViewById(R.id.image_iv);
+        ingredientsIv = findViewById(R.id.image_iv);
+        mName = (TextView) findViewById(R.id.MainName_tv);
+        ingredients = (TextView) findViewById(R.id.ingredients_tv);
+        description = (TextView)findViewById(R.id.description_tv);
+        knownAs = (TextView) findViewById(R.id.also_known_tv);
+        placeOrigin = (TextView) findViewById(R.id.origin_tv);
+
+
 
         Intent intent = getIntent();
         if (intent == null) {

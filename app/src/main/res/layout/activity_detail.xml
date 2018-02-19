@@ -15,66 +15,64 @@
         android:scaleType="centerCrop" />
 
     <TextView
-        android:id="@+id/origin_tv"
+        android:id="@+id/MainName_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="200dp"
-        android:text="Origin" />
+        android:layout_marginTop="210dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="240dp"
+        android:paddingLeft="2dp"
         android:text="@string/detail_ingredients_label"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/ingredients_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="260dp"
+        android:padding="5dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="240dp"
-        android:orientation="vertical">
+        android:layout_marginTop="280dp"
+        android:orientation="vertical"
+        android:padding="5dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="40dp"
-            android:text="@string/detail_place_of_origin_label"
+            android:text="@string/detail_description_label"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/description_tv"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="60dp"
-            android:text="description" />
+            android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/ingredients_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="80dp" />
+            android:text="@string/detail_also_known_as_label"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/also_known_tv"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="100dp" />
+            android:layout_height="wrap_content" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="120dp"
-            android:text="@string/detail_description_label"
-            android:textStyle="bold" />
+            android:text="@string/detail_place_of_origin_label" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="140dp"
-            android:text="@string/detail_also_known_as_label"
-            android:textStyle="bold" />
+            android:id="@+id/origin_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
     </LinearLayout>
 </FrameLayout>
