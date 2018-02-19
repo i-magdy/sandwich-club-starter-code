@@ -103,3 +103,12 @@ public class JsonUtils {
         return null;
     }
 }
+
+
+/*using this links to finish the project
+* https://developer.android.com/reference/org/json/JSONObject.html
+*
+* https://stackoverflow.com/questions/9605913/how-to-parse-json-in-android
+*
+* http://square.github.io/picasso/
+* */
