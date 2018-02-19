@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
@@ -14,6 +15,13 @@ public class DetailActivity extends AppCompatActivity {
 
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
+
+    TextView mName;
+    TextView knownAs;
+    TextView placeOrigin;
+    TextView description;
+    ImageView imageView;
+    TextView ingredients;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
