@@ -5,16 +5,13 @@ import com.udacity.sandwichclub.model.Sandwich;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class JsonUtils {
 
-    String mName;
-    String origin;
-    String desc;
-    String knownAs;
 
     public JsonUtils() throws JSONException {
 
@@ -24,83 +21,83 @@ public class JsonUtils {
 
     public static Sandwich parseSandwichJson(String json) {
 
-        String mName=null;
+        String mainName=null;
         String origin=null;
         String desc=null;
-        String knownAs=null;
+        String alsoKnownAs;
+
+
 
         try{
 
+            //accessing..
             JSONObject rootObject = new JSONObject(json);
+
+            //Image
+            String image = rootObject.optString("image");
+
+            //Objects
             JSONObject subObj=new JSONObject(json);
 
             //Name
-            if(rootObject.has("name"))
+            if(rootObject.has("name")) {
                 subObj = rootObject.getJSONObject("name");
+            }
 
 
             //handling mainName
             if(subObj.has("mainName")){
-               mName = subObj.getString("mainName");
-
-
+               mainName = subObj.optString("mainName");
             }
 
 
-
-            //handling Origin
-            if(rootObject.has("placeOfOrigin")) {
-                origin = rootObject.getString("placeOfOrigin");
-
-
-            }
 
             //handling Description
             if(rootObject.has("description")) {
-                desc = rootObject.getString("description");
-
-
+                desc = rootObject.optString("description");
             }
 
-            //Image
-            String image = rootObject.getString("image");
 
 
-            // handling alsoknownAs from the JSON Array
-            JSONArray setArray = subObj.getJSONArray("alsoKnownAs");
+
+            // handling alsoKnownAs from the JSON Array
+            JSONArray setArray = subObj.optJSONArray("alsoKnownAs");
             List<String> alsoKnownList = new ArrayList<>();
 
             for (int i = 0; i < setArray.length(); i++) {
 
                 if(subObj.has("alsoKnownAs")) {
-                    knownAs = setArray.getString(i);
+                    alsoKnownAs = setArray.getString(i);
 
-                    alsoKnownList.add(knownAs);
+                    alsoKnownList.add(alsoKnownAs);
                 }
             }
 
-
+            //handling Origin
+            if(rootObject.has("placeOfOrigin")) {
+                origin = rootObject.optString("placeOfOrigin");
+            }
 
 
             //handling ingredients
-            JSONArray ingreArray = rootObject.getJSONArray("ingredients");
+            JSONArray ingredientsArray = rootObject.optJSONArray("ingredients");
 
-            List<String> ingreList = new ArrayList<>();
+            List<String> ingredientsList = new ArrayList<>();
 
-            for (int i = 0; i < ingreArray.length(); i++) {
-                ingreList.add(ingreArray.getString(i));
+            for (int i = 0; i < ingredientsArray.length(); i++) {
+                ingredientsList.add(ingredientsArray.getString(i));
             }
 
             //create Sandwich Object
             Sandwich sObject;
-            sObject = new Sandwich(mName, alsoKnownList, origin, desc, image, ingreList);
+            sObject = new Sandwich(mainName, alsoKnownList, origin, desc, image, ingredientsList);
             return sObject;
 
         }catch (JSONException je) {
             je.printStackTrace();
         }
 
-        return null;
+       return null;
     }
 }
 
@@ -111,4 +108,6 @@ public class JsonUtils {
 * https://stackoverflow.com/questions/9605913/how-to-parse-json-in-android
 *
 * http://square.github.io/picasso/
+*
+* https://stackoverflow.com/questions/6674341/how-to-use-scrollview-in-android
 * */

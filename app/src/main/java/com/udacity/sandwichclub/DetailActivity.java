@@ -16,13 +16,13 @@ public class DetailActivity extends AppCompatActivity {
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
 
+
     ImageView ingredientsIv;
-    TextView mName;
+    TextView mainName;
     TextView ingredients;
     TextView description;
     TextView alsoKnownAs;
     TextView placeOrigin;
-
 
 
     @Override
@@ -31,11 +31,11 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
         ingredientsIv = findViewById(R.id.image_iv);
-        mName = (TextView) findViewById(R.id.MainName_tv);
-        ingredients = (TextView) findViewById(R.id.ingredients_tv);
-        description = (TextView)findViewById(R.id.description_tv);
-        alsoKnownAs = (TextView) findViewById(R.id.also_known_tv);
-        placeOrigin = (TextView) findViewById(R.id.origin_tv);
+        mainName = findViewById(R.id.MainName_tv);
+        ingredients = findViewById(R.id.ingredients_tv);
+        description = findViewById(R.id.description_tv);
+        alsoKnownAs = findViewById(R.id.also_known_tv);
+        placeOrigin = findViewById(R.id.origin_tv);
 
 
 
@@ -66,14 +66,10 @@ public class DetailActivity extends AppCompatActivity {
                 .into(ingredientsIv);
 
         setTitle(sandwich.getMainName());
-        if(alsoKnownAs==null){
-            alsoKnownAs.setText("No data available");
-        }else {
-            alsoKnownAs.setText(sandwich.getAlsoKnownAs().toString());
-        }
-        mName.setText(sandwich.getMainName());
+        mainName.setText(sandwich.getMainName());
         ingredients.setText(sandwich.getIngredients().toString());
         description.setText(sandwich.getDescription());
+        alsoKnownAs.setText(sandwich.getAlsoKnownAs().toString());
         placeOrigin.setText(sandwich.getPlaceOfOrigin());
 
 
